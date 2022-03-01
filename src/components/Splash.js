@@ -140,6 +140,12 @@ const Splash = ({ downButtonClicked }) => {
             icon={<AiFillDownCircle size="45px" />}
             onClick={downButtonClicked}
             color="#FF6347"
+            _hover={{
+              bg: "none",
+            }}
+            _focus={{
+              border: "none",
+            }}
           />
           {/* {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
