@@ -58,9 +58,11 @@ const CV = () => {
         <Element name="projects" className="element">
           <Projects />
         </Element>
+        <Element className="element">
+          <Footer />
+        </Element>
 
         {/* <Button onClick={scrollToTop}>top</Button> */}
-        <Footer />
       </Box>
     </>
   );
