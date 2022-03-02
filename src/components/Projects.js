@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Heading,
-  HStack,
-  SimpleGrid,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Container, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
 import React from "react";
 import { useUserDataSet } from "../hooks/useUserDataSet";
 import ProjectCard from "./Cards/ProjectCard";

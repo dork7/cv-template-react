@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { BsArrowUpShort } from "react-icons/bs";
 import { animateScroll as scroll } from "react-scroll";
 
-const ToTop = ({}) => {
+const ToTop = () => {
   return (
     <motion.div
       style={{

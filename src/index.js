@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import "./index.css";
-import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import CV from "./CV";
+
+const config = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
+const theme = extendTheme({ config });
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <CV />
     </ChakraProvider>
   </React.StrictMode>,

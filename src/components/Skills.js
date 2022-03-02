@@ -1,28 +1,9 @@
-import {
-  Badge,
-  Box,
-  Button,
-  chakra,
-  Flex,
-  Image,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-  useBreakpointValue,
-  useColorModeValue,
-  VisuallyHidden,
-} from "@chakra-ui/react";
+import { Badge, Box, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import { useUserDataSet } from "../hooks/useUserDataSet";
 
 const Skills = () => {
   const user = useUserDataSet();
-  const imageLocationX = useBreakpointValue({ base: "center", lg: "flex-end" });
-  const imageLocationY = useBreakpointValue({ base: "flex-end", md: "center" });
 
   return (
     <SimpleGrid

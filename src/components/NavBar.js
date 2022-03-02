@@ -10,12 +10,10 @@ import {
   Text,
   useBreakpointValue,
   useColorMode,
-  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsArrowUpShort } from "react-icons/bs";
-import { animateScroll as scroll, Link } from "react-scroll";
+import { Link } from "react-scroll";
 import ToTop from "./Buttons/ToTop";
 
 const NavLink = ({ children, active, handleSetActive }) => {

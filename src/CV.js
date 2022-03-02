@@ -1,11 +1,6 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import {
-  animateScroll as scroll,
-  Element,
-  Events,
-  scroller,
-} from "react-scroll";
+import { animateScroll as scroll, Element, scroller } from "react-scroll";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";

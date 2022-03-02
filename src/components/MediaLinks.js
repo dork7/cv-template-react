@@ -1,13 +1,12 @@
 import { HStack, Icon, Link } from "@chakra-ui/react";
 import React from "react";
-import { useUserDataSet } from "../hooks/useUserDataSet";
 import {
-  FaLinkedinIn,
   FaFacebookF,
   FaGithub,
   FaInstagram,
+  FaLinkedinIn,
 } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
+import { useUserDataSet } from "../hooks/useUserDataSet";
 
 const MediaLinks = () => {
   const { links } = useUserDataSet();

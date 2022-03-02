@@ -50,9 +50,9 @@ const Splash = ({ downButtonClicked }) => {
   const nextSlide = () => {
     setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
   };
-  const setSlide = (slide) => {
-    setCurrentSlide(slide);
-  };
+  // const setSlide = (slide) => {
+  //   setCurrentSlide(slide);
+  // };
   const carouselStyle = {
     transition: "all .5s",
     ml: `-${currentSlide * 100}%`,

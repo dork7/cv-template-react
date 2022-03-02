@@ -1,17 +1,8 @@
-import {
-  Box,
-  chakra,
-  Flex,
-  Heading,
-  Stack,
-  Text,
-  useBreakpointValue,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React from "react";
 import { useUserDataSet } from "../../hooks/useUserDataSet";
 import MediaLinks from "../MediaLinks";
-import { motion } from "framer-motion";
 
 const Info = () => {
   const user = useUserDataSet();
