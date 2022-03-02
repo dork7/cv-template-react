@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/cv-template-react/static/js/main.3a7a2b9c.js",
-    "index.html": "/cv-template-react/index.html",
-    "main.3a7a2b9c.js.map": "/cv-template-react/static/js/main.3a7a2b9c.js.map"
+    "main.js": "/cv/static/js/main.3a7a2b9c.js",
+    "index.html": "/cv/index.html",
+    "main.3a7a2b9c.js.map": "/cv/static/js/main.3a7a2b9c.js.map"
   },
   "entrypoints": [
     "static/js/main.3a7a2b9c.js"
