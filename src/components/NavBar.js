@@ -116,8 +116,12 @@ const NavBar = (navChange) => {
             </HStack>
           </Flex>
           <Flex alignItems={"center"}>
-            <Button onClick={toggleColorMode} mx={4}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            <Button onClick={toggleColorMode} mx={4} bg="none" border="none">
+              {colorMode === "light" ? (
+                <MoonIcon color="white" />
+              ) : (
+                <SunIcon color="white" />
+              )}
             </Button>
           </Flex>
         </Flex>
