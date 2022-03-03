@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# React JS Resume Web App Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![ReactJS Resume Website Template](cv-template.png?raw=true "ReactJS Resume Website Template")
 
-## Available Scripts
+### <a href="https://cv-template-react.herokuapp.com/">LIVE DEMO</a>
 
 In the project directory, you can run:
 
