@@ -7,7 +7,11 @@ const Projects = () => {
 
   return (
     <>
-      <Box pt={{ base: 4, md: 14, lg: 24 }} px={{ base: 4, md: 14, lg: 16 }}>
+      <Box
+        pt={{ base: 4, md: 14, lg: 24 }}
+        px={{ base: 4, md: 14, lg: 16 }}
+        minH="100vh"
+      >
         <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
           <Heading as="u" fontSize={"2xl"}>
             Projects
