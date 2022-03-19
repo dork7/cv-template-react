@@ -12,7 +12,7 @@ const ToTop = () => {
         position: "fixed",
         borderRadius: "30px",
         zIndex: 999,
-        bottom: "40px",
+        bottom: "45px",
         left: "40px",
 
         // backgroundColor: "#fff",
@@ -34,6 +34,7 @@ const ToTop = () => {
         borderRadius="full"
         overflow={"hidden"}
         onClick={() => scroll.scrollToTop()}
+        bgColor="#2b2b2b"
       >
         <BsArrowUpShort size="30px" color="#FF6347" />
       </Button>
