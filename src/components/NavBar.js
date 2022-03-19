@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import FloatingButton from "./Buttons/FloatingButton";
 import ToTop from "./Buttons/ToTop";
 
 const NavLink = ({ children, active, handleSetActive }) => {
@@ -146,6 +147,7 @@ const NavBar = (navChange) => {
         ) : null}
       </Box>
       {active !== "home" && <ToTop />}
+      {active !== "home" && <FloatingButton />}
 
       {/* <Box p={4}>Main Content Here</Box> */}
     </>

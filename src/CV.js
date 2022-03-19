@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { animateScroll as scroll, Element, scroller } from "react-scroll";
 import About from "./components/About";
+import FloatingButton from "./components/Buttons/FloatingButton";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";

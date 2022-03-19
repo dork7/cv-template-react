@@ -5,7 +5,7 @@ import { extendTheme } from "@chakra-ui/react";
 import CV from "./CV";
 
 const config = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 const theme = extendTheme({ config });

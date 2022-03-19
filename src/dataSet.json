@@ -12,7 +12,7 @@
       "links": {
         "facebook": "#",
         "instagram": "#",  
-        "linkedin": "#",
+        "_linkedin": "#",
         "github": "https://github.com/dork7",
         "_comment": "remove link if you dont want to show them"
       },

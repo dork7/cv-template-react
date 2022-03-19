@@ -13,7 +13,7 @@ const ToTop = () => {
         borderRadius: "30px",
         zIndex: 999,
         bottom: "40px",
-        right: "40px",
+        left: "40px",
 
         // backgroundColor: "#fff",
       }}
