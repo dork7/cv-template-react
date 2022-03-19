@@ -2,7 +2,7 @@
 
 ![ReactJS Resume Website Template](cv-template.png?raw=true "ReactJS Resume Website Template")
 
-### <a href="https://cv-template-react.herokuapp.com/">LIVE DEMO</a>
+### <a href="https://react-cv-template-three.vercel.app">LIVE DEMO</a>
 
 ## Description
 
