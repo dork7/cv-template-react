@@ -71,6 +71,7 @@ const Splash = ({ downButtonClicked }) => {
       //   p={10}
       alignItems="center"
       justifyContent="center"
+      borderRadius={12}
     >
       <Flex w="full" pos="relative" overflow="hidden">
         <Flex h={{ base: '50vh', md: '100vh' }} w="full" {...carouselStyle}>

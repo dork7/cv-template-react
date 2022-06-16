@@ -14,6 +14,7 @@ import {
 } from 'react-scroll';
 import { useEffect } from 'react';
 import { Splash } from './components/splash';
+import AnimatedBg from './components/AnimatedBg';
 const HomePage = () => {
   useEffect(() => {
     scroll.scrollToTop();
@@ -77,8 +78,9 @@ const HomePage = () => {
           {/* <Button onClick={scrollTo}>go to 3</Button>
         <Button onClick={scrollToWithContainer}>multi</Button> */}
           <Element name="home" className="element">
-            <Box h="100vh" bg="gray">
-              <Splash />
+            <Box h="100vh" bg="#111">
+              {/* <Splash /> */}
+              <AnimatedBg />
             </Box>
           </Element>
 

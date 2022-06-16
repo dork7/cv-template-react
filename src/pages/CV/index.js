@@ -1,15 +1,15 @@
 import { Box } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { animateScroll as scroll, Element, scroller } from 'react-scroll';
-import About from './pages/CV/About';
-import FloatingButton from './pages/CV/Buttons/FloatingButton';
-import Experience from './pages/CV/Experience';
-import Footer from './pages/CV/Footer';
-import NavBar from './pages/CV/NavBar';
-import Projects from './pages/CV/Projects';
-import Resume from './pages/CV/Resume';
-import Skills from './pages/CV/Skills';
-import Splash from './pages/CV/Splash';
+import About from './About';
+import FloatingButton from './Buttons/FloatingButton';
+import Experience from './Experience';
+import Footer from './Footer';
+import NavBar from './NavBar';
+import Projects from './Projects';
+import Resume from './Resume';
+import Skills from './Skills';
+import Splash from './Splash';
 
 const CV = () => {
   useEffect(() => {

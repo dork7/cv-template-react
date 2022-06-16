@@ -1,7 +1,7 @@
 import { ChakraProvider, extendTheme, Flex, Spinner } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-const LazyLoadedCV = React.lazy(() => import('./CV'));
+const LazyLoadedCV = React.lazy(() => import('./pages/CV'));
 const LazyLoadedHomePage = React.lazy(() => import('./pages/HomePage'));
 
 const config = {
