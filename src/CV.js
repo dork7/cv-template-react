@@ -1,15 +1,15 @@
 import { Box } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { animateScroll as scroll, Element, scroller } from 'react-scroll';
-import About from './components/cv_components/About';
-import FloatingButton from './components/cv_components/Buttons/FloatingButton';
-import Experience from './components/cv_components/Experience';
-import Footer from './components/cv_components/Footer';
-import NavBar from './components/cv_components/NavBar';
-import Projects from './components/cv_components/Projects';
-import Resume from './components/cv_components/Resume';
-import Skills from './components/cv_components/Skills';
-import Splash from './components/cv_components/Splash';
+import About from './pages/CV/About';
+import FloatingButton from './pages/CV/Buttons/FloatingButton';
+import Experience from './pages/CV/Experience';
+import Footer from './pages/CV/Footer';
+import NavBar from './pages/CV/NavBar';
+import Projects from './pages/CV/Projects';
+import Resume from './pages/CV/Resume';
+import Skills from './pages/CV/Skills';
+import Splash from './pages/CV/Splash';
 
 const CV = () => {
   useEffect(() => {
@@ -37,8 +37,6 @@ const CV = () => {
     <>
       <NavBar {...{ navChange }} />
       <Box>
-        {/* <Button onClick={scrollTo}>go to 3</Button>
-        <Button onClick={scrollToWithContainer}>multi</Button> */}
         <Element name="home" className="element">
           <Splash {...{ downButtonClicked }} />
         </Element>
