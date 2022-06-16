@@ -15,10 +15,12 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import InputField from '../../components/InputField';
 import moment from 'moment';
+import { useReadWriteJSON } from '../../hooks/readWriteJSON';
 
 const ChakraDatePicker = chakra(DatePicker);
 
 const UserInformation = () => {
+  const { getUserData, writeUserData } = useReadWriteJSON();
   const [date, setDate] = useState(new Date());
   const [submittedMsg, setSubmittedMsg] = useState('');
   const {
@@ -31,6 +33,7 @@ const UserInformation = () => {
 
   const formSubmit = (data) => {
     console.log('data', data);
+    writeUserData(data);
     setTimeout(() => {
       setSubmittedMsg('Form Submitted');
     }, 500);
