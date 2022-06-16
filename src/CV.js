@@ -1,15 +1,15 @@
-import { Box } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { animateScroll as scroll, Element, scroller } from "react-scroll";
-import About from "./components/About";
-import FloatingButton from "./components/Buttons/FloatingButton";
-import Experience from "./components/Experience";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-import Projects from "./components/Projects";
-import Resume from "./components/Resume";
-import Skills from "./components/Skills";
-import Splash from "./components/Splash";
+import { Box } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
+import { animateScroll as scroll, Element, scroller } from 'react-scroll';
+import About from './components/cv_components/About';
+import FloatingButton from './components/cv_components/Buttons/FloatingButton';
+import Experience from './components/cv_components/Experience';
+import Footer from './components/cv_components/Footer';
+import NavBar from './components/cv_components/NavBar';
+import Projects from './components/cv_components/Projects';
+import Resume from './components/cv_components/Resume';
+import Skills from './components/cv_components/Skills';
+import Splash from './components/cv_components/Splash';
 
 const CV = () => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const CV = () => {
   }, []);
 
   const navChange = (navLink) => {
-    console.log("navLink", navLink);
+    console.log('navLink', navLink);
     // scroller.scrollTo(navLink.split("/")[1], {
     //   duration: 800,
     //   delay: 0,
@@ -26,10 +26,10 @@ const CV = () => {
   };
 
   const downButtonClicked = () => {
-    scroller.scrollTo("about", {
+    scroller.scrollTo('about', {
       duration: 800,
       delay: 0,
-      smooth: "easeInOutQuart",
+      smooth: 'easeInOutQuart',
     });
   };
 

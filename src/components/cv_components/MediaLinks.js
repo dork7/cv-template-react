@@ -1,17 +1,17 @@
-import { HStack, Icon, Link } from "@chakra-ui/react";
-import React from "react";
+import { HStack, Icon, Link } from '@chakra-ui/react';
+import React from 'react';
 import {
   FaFacebookF,
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
-} from "react-icons/fa";
-import { useUserDataSet } from "../hooks/useUserDataSet";
+} from 'react-icons/fa';
+import { useUserDataSet } from './hooks/useUserDataSet';
 
 const MediaLinks = () => {
   const { links } = useUserDataSet();
   return (
-    <HStack alignSelf={"center"} pt={4} spacing={6}>
+    <HStack alignSelf={'center'} pt={4} spacing={6}>
       {links.linkedin && (
         <Link href={links.linkedin} isExternal>
           <Icon as={FaLinkedinIn} w={6} h={6} />

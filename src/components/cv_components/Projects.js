@@ -1,7 +1,7 @@
-import { Box, Container, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
-import React from "react";
-import { useUserDataSet } from "../hooks/useUserDataSet";
-import ProjectCard from "./Cards/ProjectCard";
+import { Box, Container, Heading, SimpleGrid, Stack } from '@chakra-ui/react';
+import React from 'react';
+import { useUserDataSet } from './hooks/useUserDataSet';
+import ProjectCard from './Cards/ProjectCard';
 const Projects = () => {
   const user = useUserDataSet();
 
@@ -12,8 +12,8 @@ const Projects = () => {
         px={{ base: 4, md: 14, lg: 16 }}
         minH="100vh"
       >
-        <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
-          <Heading as="u" fontSize={"2xl"}>
+        <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+          <Heading as="u" fontSize={'2xl'}>
             Projects
           </Heading>
         </Stack>

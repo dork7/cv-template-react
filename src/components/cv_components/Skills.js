@@ -1,6 +1,6 @@
-import { Badge, Box, SimpleGrid, Text } from "@chakra-ui/react";
-import React from "react";
-import { useUserDataSet } from "../hooks/useUserDataSet";
+import { Badge, Box, SimpleGrid, Text } from '@chakra-ui/react';
+import React from 'react';
+import { useUserDataSet } from './hooks/useUserDataSet';
 
 const Skills = () => {
   const user = useUserDataSet();
@@ -10,9 +10,9 @@ const Skills = () => {
       columns={{ base: 1, md: 2 }}
       spacing={0}
       _after={{
-        bg: "brand.500",
+        bg: 'brand.500',
         opacity: 0.25,
-        pos: "absolute",
+        pos: 'absolute',
         top: 0,
         left: 0,
         bottom: 0,
@@ -22,20 +22,20 @@ const Skills = () => {
       }}
       px={2}
     >
-      {" "}
+      {' '}
       <Box
         d="flex"
-        justifyContent={{ base: "center", lg: "flex-end" }}
+        justifyContent={{ base: 'center', lg: 'flex-end' }}
         // alignItems={{ base: "flex-end", lg: "center" }}
         px={16}
       >
-        <Text as="u" fontSize={{ base: "md", md: "lg", lg: "xl" }} pb={2}>
+        <Text as="u" fontSize={{ base: 'md', md: 'lg', lg: 'xl' }} pb={2}>
           Skills
         </Text>
       </Box>
       <Box
         direction="rows"
-        w={{ base: "100%", md: "70%", lg: "70%" }}
+        w={{ base: '100%', md: '70%', lg: '70%' }}
         pr={{ base: 4, lg: 12 }}
         pb={16}
 

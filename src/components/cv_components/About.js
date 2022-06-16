@@ -9,9 +9,9 @@ import {
   Stack,
   Text,
   useColorModeValue,
-} from "@chakra-ui/react";
-import React from "react";
-import { useUserDataSet } from "../hooks/useUserDataSet";
+} from '@chakra-ui/react';
+import React from 'react';
+import { useUserDataSet } from './hooks/useUserDataSet';
 
 const About = () => {
   const user = useUserDataSet();
@@ -21,9 +21,9 @@ const About = () => {
       columns={{ base: 1, md: 2 }}
       spacing={0}
       _after={{
-        bg: "brand.500",
+        bg: 'brand.500',
         opacity: 0.25,
-        pos: "absolute",
+        pos: 'absolute',
         top: 0,
         left: 0,
         bottom: 0,
@@ -33,11 +33,11 @@ const About = () => {
       }}
       px={2}
     >
-      {" "}
+      {' '}
       <Box
         d="flex"
-        justifyContent={{ base: "center", lg: "flex-end" }}
-        p={{ base: "4", lg: "16" }}
+        justifyContent={{ base: 'center', lg: 'flex-end' }}
+        p={{ base: '4', lg: '16' }}
       >
         <Image
           src={user.profileImage}
@@ -69,20 +69,20 @@ const About = () => {
           colorScheme="brand"
           rounded="full"
         >
-          About Me{" "}
+          About Me{' '}
         </Badge>
         <Text
           mb={6}
           p={2}
-          fontSize={{ base: "md", md: "lg", lg: "xl" }}
+          fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
           //   fontWeight="bold"
-          color={useColorModeValue("brand.600", "gray.300")}
+          color={useColorModeValue('brand.600', 'gray.300')}
           lineHeight="shorter"
           w="75%"
         >
-          {user.aboutMe}{" "}
+          {user.aboutMe}{' '}
         </Text>
-        <Flex justify={"space-between"} w="75%">
+        <Flex justify={'space-between'} w="75%">
           <Box>
             <Badge
               // color={useColorModeValue("brand.600", "gray.300")}
