@@ -10,6 +10,7 @@ const AnimatedBg = () => {
         activeOffset={1}
         rotateXMax={1}
         rotateYMax={1}
+        overflow="hidden"
 
         // rotate={false}
       >

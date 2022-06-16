@@ -15,9 +15,10 @@ import {
 import { useEffect } from 'react';
 import { Splash } from './components/splash';
 import AnimatedBg from './components/AnimatedBg';
+import CVForm from './components/Forms';
 const HomePage = () => {
   useEffect(() => {
-    scroll.scrollToTop();
+    // scroll.scrollToTop();
   }, []);
 
   const navChange = (navLink) => {
@@ -75,22 +76,22 @@ const HomePage = () => {
         }}
       >
         <Box>
-          {/* <Button onClick={scrollTo}>go to 3</Button>
-        <Button onClick={scrollToWithContainer}>multi</Button> */}
           <Element name="home" className="element">
-            <Box h="100vh" bg="#111">
+            <Box bg="#111" overflow="hidden">
               {/* <Splash /> */}
               <AnimatedBg />
             </Box>
           </Element>
 
           <Element name="generate-cv" className="element">
-            <Box h="100vh">generate-cv</Box>
+            <Box h="100vh">
+              <CVForm />
+            </Box>
           </Element>
           <Element name="about" className="element">
             <Box h="100vh">About</Box>
           </Element>
-          <Element
+          {/* <Element
             className="element"
             id="scroll-container"
             style={{
@@ -118,7 +119,7 @@ const HomePage = () => {
             >
               second element inside container
             </Element>
-          </Element>
+          </Element> */}
           <Button onClick={scrollToTop}>top</Button>
         </Box>
       </ErrorBoundary>
