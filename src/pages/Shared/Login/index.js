@@ -34,7 +34,8 @@ const Login = () => {
 
   const onSubmit = (body) => {
     console.log('body', body);
-    dispatch(loginRequest({ body }));
+    // dispatch(loginRequest({ body }));
+    dispatch(loginRequest(body));
   };
 
   return (
