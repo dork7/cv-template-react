@@ -13,9 +13,15 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 const Login = () => {
   const { toggleColorMode } = useColorMode();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
   return (
     <Flex minH={'100vh'} align={'center'} justify={'center'} bg={'black'}>
@@ -34,11 +40,28 @@ const Login = () => {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" variant={'authField'} />
+              <Input
+                variant={'authField'}
+                type="email"
+                test-id="email"
+                {...register('email', {
+                  required: 'Enter email please',
+                })}
+                isInvalid={!!errors?.email}
+              />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" variant={'authField'} />
+              <Input
+                variant={'authField'}
+                type="password"
+                test-id="password"
+                {...register('password', {
+                  required: 'Enter password please',
+                  minLength: 2,
+                })}
+                isInvalid={errors?.password}
+              />
             </FormControl>
             <Stack spacing={5}>
               <Button variant={'blackButton'}>Sign in</Button>

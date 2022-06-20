@@ -10,11 +10,38 @@ import {
   Text,
   useColorModeValue,
   useColorMode,
+  chakra,
+  useToast,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 const Register = () => {
   const { toggleColorMode } = useColorMode();
+  const toast = useToast();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const onSubmit = (body) => {
+    console.log('body', body);
+  };
+
+  useEffect(() => {
+    console.log('errors', errors);
+
+    //   toast({
+    //     position: 'bottom',
+    //     render: () => (
+    //       <Box color="white" p={3} bg="blue.500">
+    //         {errors?.email?.message || errors?.password?.message}
+    //       </Box>
+    //     ),
+    //   });
+  }, [errors]);
 
   return (
     <Flex
@@ -30,39 +57,60 @@ const Register = () => {
             Register your account ✌️
           </Heading>
         </Stack>
-        <Box
-          rounded={'lg'}
-          bg={useColorModeValue('gray.200', 'gray.700')}
-          boxShadow={'lg'}
-          p={8}
-        >
-          <Stack spacing={4}>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" variant={'authField'} />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <Input type="password" variant={'authField'} />
-            </FormControl>
+        <chakra.form onSubmit={handleSubmit(onSubmit)}>
+          <Box
+            rounded={'lg'}
+            bg={useColorModeValue('gray.200', 'gray.700')}
+            boxShadow={'lg'}
+            p={8}
+          >
+            <Stack spacing={4}>
+              <FormControl id="email">
+                <FormLabel>Email address</FormLabel>
+                <Input
+                  variant={'authField'}
+                  type="email"
+                  test-id="email"
+                  {...register('email', {
+                    required: 'Enter email please',
+                  })}
+                  isInvalid={!!errors?.email}
+                />
+              </FormControl>
+              <FormControl id="password">
+                <FormLabel>Password</FormLabel>
+                <Input
+                  variant={'authField'}
+                  type="password"
+                  test-id="password"
+                  {...register('password', {
+                    required: 'Enter password please',
+                    minLength: 2,
+                  })}
+                  isInvalid={errors?.password}
+                />
+              </FormControl>
 
-            <Stack spacing={5}>
-              <Button variant={'blackButton'}>Register</Button>
-              <Stack
-                direction={{ base: 'column', sm: 'row' }}
-                align={'start'}
-                justify={'space-between'}
-              >
-                <Text>Already have account?</Text>
-                <Link to="/login">
-                  <Text as="u" color={'blue.300'}>
-                    Login
-                  </Text>
-                </Link>
+              <Stack spacing={5}>
+                <Button variant={'blackButton'} type="submit">
+                  Register
+                </Button>
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  align={'start'}
+                  justify={'space-between'}
+                >
+                  <Text>Already have account?</Text>
+                  <Link to="/login">
+                    <Text as="u" color={'blue.300'}>
+                      Login
+                    </Text>
+                  </Link>
+                </Stack>
               </Stack>
             </Stack>
-          </Stack>
-        </Box>
+          </Box>
+        </chakra.form>
       </Stack>
     </Flex>
   );

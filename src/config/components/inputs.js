@@ -28,7 +28,7 @@ export const ExtendedInputs = {
   variants: {
     outline: {
       field: {
-        border: '2px solid',
+        border: '1px solid',
         _focus: {
           borderColor: '#9280FF',
           boxShadow: 'none',
@@ -41,9 +41,14 @@ export const ExtendedInputs = {
         border: '1px solid',
         borderColor: '#000',
         borderRadius: '0px',
+        color: 'black',
         _focus: {
           borderColor: 'black',
           boxShadow: 'none',
+        },
+        _invalid: {
+          border: '2px solid',
+          borderColor: '#FF4500',
         },
       },
     },
