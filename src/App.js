@@ -11,7 +11,7 @@ import {
 } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Provider } from 'react-redux';
-import store from './store.js';
+import { store } from './store';
 
 const LazyLoadedCV = React.lazy(() => import('./pages/CV'));
 const LazyLoadedHomePage = React.lazy(() => import('./pages/HomePage'));
