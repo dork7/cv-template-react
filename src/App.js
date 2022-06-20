@@ -1,14 +1,15 @@
 import { ChakraProvider, extendTheme, Flex, Spinner } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import theme from './config/theme';
+
 const LazyLoadedCV = React.lazy(() => import('./pages/CV'));
 const LazyLoadedHomePage = React.lazy(() => import('./pages/HomePage'));
+const LazyLoadedLoginPage = React.lazy(() => import('./pages/Shared/Login'));
+const LazyLoadedRegisterPage = React.lazy(() =>
+  import('./pages/Shared/Register')
+);
 
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-};
-const theme = extendTheme({ config });
 const WaitingSpinner = () => {
   return (
     <>
@@ -26,6 +27,9 @@ function App() {
         <Suspense fallback={<WaitingSpinner />}>
           <BrowserRouter>
             <Routes>
+              <Route path="/login" element={<LazyLoadedLoginPage />} />
+              <Route path="/register" element={<LazyLoadedRegisterPage />} />
+
               <Route path="/" element={<LazyLoadedHomePage />} />
 
               <Route path="/cv/:userId" element={<LazyLoadedCV />} />
