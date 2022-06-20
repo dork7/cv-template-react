@@ -27,6 +27,8 @@
     "react-scroll": "^1.8.5",
     "react-slick": "^0.29.0",
     "react-tiny-fab": "^4.0.4",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
     "serve": "^13.0.2",
     "web-vitals": "^2.1.4"
   },

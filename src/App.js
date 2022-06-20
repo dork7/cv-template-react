@@ -10,6 +10,8 @@ import {
   QueryClientProvider,
 } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { Provider } from 'react-redux';
+import store from './store.js';
 
 const LazyLoadedCV = React.lazy(() => import('./pages/CV'));
 const LazyLoadedHomePage = React.lazy(() => import('./pages/HomePage'));
@@ -33,23 +35,28 @@ const WaitingSpinner = () => {
 function App() {
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <ChakraProvider theme={theme}>
-          <Suspense fallback={<WaitingSpinner />}>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/login" element={<LazyLoadedLoginPage />} />
-                <Route path="/register" element={<LazyLoadedRegisterPage />} />
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <ChakraProvider theme={theme}>
+            <Suspense fallback={<WaitingSpinner />}>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/login" element={<LazyLoadedLoginPage />} />
+                  <Route
+                    path="/register"
+                    element={<LazyLoadedRegisterPage />}
+                  />
 
-                <Route path="/" element={<LazyLoadedHomePage />} />
+                  <Route path="/" element={<LazyLoadedHomePage />} />
 
-                <Route path="/cv/:userId" element={<LazyLoadedCV />} />
-              </Routes>
-            </BrowserRouter>
-          </Suspense>
-        </ChakraProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+                  <Route path="/cv/:userId" element={<LazyLoadedCV />} />
+                </Routes>
+              </BrowserRouter>
+            </Suspense>
+          </ChakraProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </Provider>
     </>
   );
 }
