@@ -4,12 +4,14 @@ import axios from 'axios';
 
 const namespace = 'login';
 export const loginRequest = createAsyncThunk(
-  `${namespace}/request`,
-  async () => {
-    const data = await CustomAxios.get(
-      'https://jsonplaceholder.typicode.com/users/1'
-    );
-    return data;
+  `${namespace}/auth/login`,
+  async (body, { rejectWithValue }) => {
+    try {
+      const data = await CustomAxios.post(`/auth/login`, body);
+      return data;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
   }
 );
 
@@ -41,8 +43,9 @@ const loginSlice = createSlice({
       state.isLoggedIn = true;
     },
     [loginRequest.rejected]: (state, action) => {
+      const { response } = action.payload;
       state.isLoading = false;
-      state.error = action.payload;
+      state.error = response.data;
     },
   },
 });

@@ -16,9 +16,12 @@ import {
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerRequest } from './registerSlice';
+
 const Register = () => {
   const { toggleColorMode } = useColorMode();
-  const toast = useToast();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -28,20 +31,8 @@ const Register = () => {
 
   const onSubmit = (body) => {
     console.log('body', body);
+    dispatch(registerRequest(body));
   };
-
-  useEffect(() => {
-    console.log('errors', errors);
-
-    //   toast({
-    //     position: 'bottom',
-    //     render: () => (
-    //       <Box color="white" p={3} bg="blue.500">
-    //         {errors?.email?.message || errors?.password?.message}
-    //       </Box>
-    //     ),
-    //   });
-  }, [errors]);
 
   return (
     <Flex

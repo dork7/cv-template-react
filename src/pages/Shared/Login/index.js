@@ -12,19 +12,40 @@ import {
   useColorModeValue,
   useColorMode,
   chakra,
+  useToast,
 } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { createToast } from '../../../components/ToastMessage';
 import { getUser, loginRequest } from './loginSlice';
 const Login = () => {
   const { toggleColorMode } = useColorMode();
+
   const dispatch = useDispatch();
-  const data = useSelector(getUser);
+  const { data, error, isLoading } = useSelector((state) => state.login);
   useEffect(() => {
     console.log('data', data);
+
+    if (data?.success) {
+      createToast({
+        title: 'Login success',
+        msg: `Welcome , ${data.email}`,
+        type: 'success',
+      });
+    }
   }, [data]);
+
+  useEffect(() => {
+    if (error) {
+      createToast({
+        title: 'Login failed',
+        msg: error.message,
+        type: 'error',
+      });
+    }
+  }, [error]);
 
   const {
     register,
@@ -33,8 +54,6 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (body) => {
-    console.log('body', body);
-    // dispatch(loginRequest({ body }));
     dispatch(loginRequest(body));
   };
 
@@ -80,7 +99,11 @@ const Login = () => {
                 />
               </FormControl>
               <Stack spacing={5}>
-                <Button variant={'blackButton'} type="submit">
+                <Button
+                  variant={'blackButton'}
+                  type="submit"
+                  isLoading={isLoading}
+                >
                   Sign in
                 </Button>
                 <Stack
