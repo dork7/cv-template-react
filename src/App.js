@@ -1,6 +1,6 @@
 import { ChakraProvider, extendTheme, Flex, Spinner } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 import theme from './config/theme';
 import {
   useQuery,
@@ -39,7 +39,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <ChakraProvider theme={theme}>
             <Suspense fallback={<WaitingSpinner />}>
-              <BrowserRouter>
+              <HashRouter>
                 <Routes>
                   <Route path="/login" element={<LazyLoadedLoginPage />} />
                   <Route
@@ -51,7 +51,7 @@ function App() {
 
                   <Route path="/cv/:userId" element={<LazyLoadedCV />} />
                 </Routes>
-              </BrowserRouter>
+              </HashRouter>
             </Suspense>
           </ChakraProvider>
           <ReactQueryDevtools initialIsOpen={false} />
