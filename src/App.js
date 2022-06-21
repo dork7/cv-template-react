@@ -39,7 +39,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <ChakraProvider theme={theme}>
             <Suspense fallback={<WaitingSpinner />}>
-              <HashRouter>
+              <BrowserRouter>
                 <Routes>
                   <Route path="/login" element={<LazyLoadedLoginPage />} />
                   <Route
@@ -51,7 +51,7 @@ function App() {
 
                   <Route path="/cv/:userId" element={<LazyLoadedCV />} />
                 </Routes>
-              </HashRouter>
+              </BrowserRouter>
             </Suspense>
           </ChakraProvider>
           <ReactQueryDevtools initialIsOpen={false} />
