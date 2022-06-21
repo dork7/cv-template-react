@@ -4,7 +4,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -25,6 +24,7 @@ import {
   MoonIcon,
   SunIcon,
 } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 import UserInfoCard from './UserInfoCard';
 
 const NavLink = ({ children, navChange }) => {
@@ -37,7 +37,7 @@ const NavLink = ({ children, navChange }) => {
         textDecoration: 'none',
         bg: useColorModeValue('gray.200', 'gray.700'),
       }}
-      href={children.external ? children.path : '#'}
+      to={children.external ? children.path : '#'}
       isExternal={children.external}
       onClick={() => {
         navChange(children.path);
@@ -63,6 +63,11 @@ const NavBar = ({ navChange }) => {
     {
       name: 'CV',
       path: '/cv/123',
+      external: true,
+    },
+    {
+      name: 'Login',
+      path: '/login',
       external: true,
     },
   ];
