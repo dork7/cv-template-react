@@ -2,6 +2,7 @@
   "name": "cv-template-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.6",
