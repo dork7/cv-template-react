@@ -18,10 +18,35 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerRequest } from './registerSlice';
+import { createToast } from '../../../components/ToastMessage';
 
 const Register = () => {
   const { toggleColorMode } = useColorMode();
   const dispatch = useDispatch();
+
+  const { data, error, isLoading } = useSelector((state) => state.register);
+
+  useEffect(() => {
+    console.log('data', data);
+
+    if (data?.success) {
+      createToast({
+        title: 'Register success',
+        msg: `Welcome , ${data.email}`,
+        type: 'success',
+      });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (error) {
+      createToast({
+        title: 'Register failed',
+        msg: error.message,
+        type: 'error',
+      });
+    }
+  }, [error]);
 
   const {
     register,
@@ -30,7 +55,7 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (body) => {
-    console.log('body', body);
+    // console.log('body', body);
     dispatch(registerRequest(body));
   };
 
@@ -83,7 +108,11 @@ const Register = () => {
               </FormControl>
 
               <Stack spacing={5}>
-                <Button variant={'blackButton'} type="submit">
+                <Button
+                  variant={'blackButton'}
+                  type="submit"
+                  isLoading={isLoading}
+                >
                   Register
                 </Button>
                 <Stack

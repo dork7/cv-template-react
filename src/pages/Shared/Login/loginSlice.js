@@ -41,6 +41,7 @@ const loginSlice = createSlice({
       state.isLoading = false;
       state.data = action.payload.data;
       state.isLoggedIn = true;
+      state.error = null;
     },
     [loginRequest.rejected]: (state, action) => {
       const { response } = action.payload;
