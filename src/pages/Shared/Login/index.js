@@ -19,15 +19,13 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createToast } from '../../../components/ToastMessage';
-import { getUser, loginRequest } from './loginSlice';
+import { getUser, loginRequest, setLoginError } from './loginSlice';
 const Login = () => {
   const { toggleColorMode } = useColorMode();
 
   const dispatch = useDispatch();
   const { data, error, isLoading } = useSelector((state) => state.login);
   useEffect(() => {
-    console.log('data', data);
-
     if (data?.success) {
       createToast({
         title: 'Login success',
@@ -44,6 +42,7 @@ const Login = () => {
         msg: error.message,
         type: 'error',
       });
+      dispatch(setLoginError());
     }
   }, [error]);
 

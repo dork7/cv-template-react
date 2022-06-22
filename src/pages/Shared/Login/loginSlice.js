@@ -29,6 +29,9 @@ const loginSlice = createSlice({
     login: (state, action) => {
       state.data = action.payload;
     },
+    setLoginError: (state, action) => {
+      state.error = null;
+    },
     // loginRequest: (state, action) => {
     //   state.data = action.payload.body;
     // },
@@ -51,6 +54,6 @@ const loginSlice = createSlice({
   },
 });
 
-export const { login } = loginSlice.actions;
+export const { login, setLoginError } = loginSlice.actions;
 export const getUser = (state) => state.login.data;
 export default loginSlice.reducer;
