@@ -26,6 +26,7 @@ import {
 } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 import UserInfoCard from './UserInfoCard';
+import { CustomAxios } from '../../../config/axios';
 
 const NavLink = ({ children, navChange }) => {
   return (
@@ -73,6 +74,14 @@ const NavBar = ({ navChange }) => {
   ];
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const logout = async () => {
+    try {
+      CustomAxios.get('/auth/logout');
+    } catch (err) {
+      console.log('err', err);
+    }
+  };
 
   return (
     <>
@@ -129,7 +138,10 @@ const NavBar = ({ navChange }) => {
                 <MenuDivider />
                 <MenuItem>Your Servers</MenuItem>
                 <MenuItem>Account Settings</MenuItem>
-                <MenuItem>Logout</MenuItem>
+                <MenuItem>
+                  {' '}
+                  <Button onClick={logout}>Logout</Button>
+                </MenuItem>
               </MenuList>
             </Menu>
           </Flex>
